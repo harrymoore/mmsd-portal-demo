@@ -1,0 +1,52 @@
+{
+	"_qname": "mmsd:page",
+	"_type": "d:type",
+	"title": "Page",
+	"type": "object",
+	"_parent": "n:node",
+	"sort": 1,
+	"properties": {
+		"title": {
+			"label": "Page Title",
+			"type": "string",
+			"required": true
+		},
+        "pageId": {
+            "type": "string",
+            "title": "Page Identifier",
+            "required": true,
+            "enum": ["home", "about", "article"]
+        },
+		"mainImage": {
+			"type": "object",
+			"_attachment": {
+				"id": "default"
+			}
+		},
+		"secondaryImage": {
+			"type": "object",
+			"_relator": {
+			}
+		},
+        "metadata": {
+            "type": "array",
+            "title": "metadata",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "key": {
+                        "title": "",
+                        "type": "string",
+                        "required": false
+                    },
+                    "value": {
+                        "type": "string",
+                        "title": "value"
+                    }
+                }
+            }
+		}
+	},
+	"dependencies": {},
+	"$schema": "http://json-schema.org/draft-04/schema#"
+}

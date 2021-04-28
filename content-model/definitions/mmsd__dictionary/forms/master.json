@@ -1,0 +1,28 @@
+{
+	"_type": "n:form",
+	"title": "master",
+	"fields": {
+		"title": {
+			"type": "text",
+			"label": "Dictionary Title",
+			"required": true,
+			"default": ""
+		},
+		"dictionaryId": {
+			"type": "text",
+			"label": "Dictionary Id",
+			"required": true,
+			"default": ""
+		},
+		"term": {
+			"type": "array",
+			"label": "Term",
+			"required": false,
+			"items": {
+				"type": "text",
+				"label": "term"
+			}
+		}
+	},
+	"engineId": "alpaca1"
+}

@@ -1,0 +1,76 @@
+{
+    "_type": "n:form",
+    "title": "master",
+    "fields": {
+        "title": {
+            "type": "text",
+            "label": "",
+            "required": true,
+            "default": ""
+        },
+        "pageId": {
+            "type": "text",
+            "label": "Page Identifier",
+            "required": true,
+            "default": "",
+            "optionLabels": [
+                "home",
+                "about",
+                "article"
+            ]
+        },
+        "mainImage": {
+            "type": "related-content",
+            "label": "Main Image",
+            "required": false,
+            "uploadPath": "/images",
+            "maxNumberOfFiles": 1,
+            "fileTypes": "(\\.|/)(gif|jpe?g|png|svg)$"
+        },
+        "secondaryImage": {
+            "type": "related-content",
+            "label": "Secondary Image",
+            "required": false,
+            "uploadPath": "/images",
+            "maxNumberOfFiles": 1,
+            "fileTypes": "(\\.|/)(gif|jpe?g|png|svg)$"
+        },
+        "metadata": {
+            "type": "array",
+            "label": "Metadata",
+            "required": false,
+            "items": {
+                "type": "object",
+                "label": "metadata",
+                "fields": {
+                    "key": {
+                        "type": "select",
+                        "label": "Key",
+                        "required": true,
+                        "dataSource": {
+                            "connector": true,
+                            "config": {
+                                "query": {
+                                    "_type": "mmsd:dictionary",
+                                    "dictionaryId": "page-dictionary"
+                                },
+                                "mappings": {
+                                    "value": "_doc",
+                                    "text": "title"
+                                }
+                            }
+                        }
+                    },
+                    "value": {
+                        "type": "text",
+                        "label": "Value",
+                        "required": true,
+                        "default": ""
+                    }
+                }
+            }
+        }
+    },
+    "dependencies": {},
+    "engineId": "alpaca1"
+}

@@ -1,0 +1,30 @@
+{
+	"_qname": "mmsd:dictionary",
+	"_type": "d:type",
+    "description": "Names for name/value pairings",
+	"title": "Dictionary",
+	"type": "object",
+	"_parent": "n:node",
+	"sort": 2,
+	"properties": {
+		"title": {
+			"title": "Dictionary Title",
+			"type": "string"
+		},
+        "dictionaryId": {
+            "type": "string",
+            "description": "Unique id of this dictionary for reference by consumers",
+            "title": "dictionaryId",
+            "required": true
+        },
+        "term": {
+            "type": "array",
+            "title": "term",
+            "required": false,
+            "items": {
+                "type": "string"
+            }
+        }
+	},
+	"$schema": "http://json-schema.org/draft-04/schema#"
+}
